@@ -1,0 +1,39 @@
+@import url('https://fonts.googleapis.com/css?family=Nunito:200');
+h1,
+h2,
+h3,
+p,
+a,
+input,
+button {
+    font-family: 'Nunito', sans-serif;
+}
+
+body {
+    background-color: #dddddd;
+}
+
+nav {
+    background-color: #dddddd00;
+}
+
+#brand {
+    color: rgb(43, 43, 43);
+}
+
+#brand:hover {
+    text-shadow: 0 0 3px #b9b600;
+    ;
+}
+
+.navItem {
+    color: rgb(43, 43, 43);
+}
+
+.navItem:hover {
+    text-shadow: 0 0 3px rgb(0, 162, 255);
+}
+
+#registerBtn {
+    margin-left: 10px;
+}
