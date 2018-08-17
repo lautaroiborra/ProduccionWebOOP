@@ -1,3 +1,7 @@
+<?php session_start()
+
+?>
+
 <!doctype html>
 <html lang="en">
 
@@ -32,10 +36,10 @@
                                 <a class="nav-link navItem" href="#">Ofertas</a>
                             </li>
                         </ul>
-                        <form class="form-inline my-2 my-lg-0">
+                        <form class="form-inline my-2 my-lg-0" action="backend/handles/login.php" method="POST">
                             <div class="form-group mb-2">
-                                <label for="email" class="sr-only">Email</label>
-                                <input type="text" class="form-control" id="email" placeholder="email@example.com">
+                                <label for="email" class="sr-only">Username</label>
+                                <input type="text" class="form-control" id="username" name="" placeholder="Username">
                             </div>
                             <div class="form-group mx-sm-3 mb-2">
                                 <label for="password" class="sr-only">Password</label>
@@ -44,6 +48,7 @@
                             <button type="submit" class="btn btn-primary mb-2">Login</button>
                         </form>
                         <button type="submit" class="btn btn-success mb-2" id="registerBtn">Sign Up</button>
+
                     </div>
                 </nav>
             </div>
