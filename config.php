@@ -1,5 +1,6 @@
 <?php
 $rootFolder = __DIR__;
+$classesFolder = $rootFolder . "/backend/classes";
 
 //Development
 $host = "localhost";

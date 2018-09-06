@@ -15,6 +15,7 @@ class Database{
         $statement = $connection->prepare("SELECT * FROM usuarios WHERE username= $user->get($username)");
         $statement->execute();
         $result = $statement->setFetchMode(PDO::FETCH_ASSOC);
+        clearConnection();
         return $result;
     }
 }
