@@ -1,6 +1,29 @@
 <?php
 require_once('config.php');
 
+function FetchDataAssoc(){
+    //testeo
+    $nameUser = "testeo1";
+    $file_name = "users.json";
+    $file = fopen($file_name, 'r');
+    $data = json_decode(fread($file, filesize($file_name)));
+    foreach ($data as $elemento){
+        //var_dump($elemento);
+        if($nameUser == $elemento->name){
+            echo 'Tengo que retornar un objeto usuario con sus atributos';
+            //retornar el usuario con sus datos encapsulados
+            //Si se encuentra el user, creamos un usuario
+            //$user = new User($valor['username'], $valor['hash'], $valor['salt']);
+            //return $user;
+        }
+    }
+    fclose($file);
+}
+
+$data = FetchDataAssoc();
+
+/*
+
 function fetchDataAssoc($filePath){
     $file = fopen($filePath, 'r');
     $data = json_decode(fread($file, filesize($filePath)), true);
@@ -20,3 +43,4 @@ var_dump($user);
 //var_dump($connection);
 //var_dump($statement);
 //var_dump($result);
+*/
