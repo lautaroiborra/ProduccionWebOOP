@@ -1,4 +1,5 @@
 <?php
+/*
 require_once('config.php');
 
 function FetchDataAssoc(){
@@ -43,4 +44,39 @@ var_dump($user);
 //var_dump($connection);
 //var_dump($statement);
 //var_dump($result);
+<<<<<<< HEAD
+=======
+*/
+
+$host = '127.0.0.1';
+$db   = 'produccionweb';
+$user = 'root';
+$pass = '';
+$charset = 'utf8mb4';
+
+$dsn = "mysql:host=$host;dbname=$db;charset=$charset";
+$options = [
+    PDO::ATTR_ERRMODE            => PDO::ERRMODE_EXCEPTION,
+    PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
+    PDO::ATTR_EMULATE_PREPARES   => false,
+];
+try {
+     $pdo = new PDO($dsn, $user, $pass, $options);
+} catch (\PDOException $e) {
+     throw new \PDOException($e->getMessage(), (int)$e->getCode());
+}
+
+$email = 'testeo2@davinci.edu.ar';
+
+
+$stmt = $pdo->prepare('SELECT * FROM users WHERE email = ?');
+$stmt->execute([$email]);
+$user = $stmt->fetch();
+var_dump($user);
+/*
+while ($row = $stmt->fetch())
+{
+    echo $row['name'] . "<br>";
+}
+>>>>>>> aaa411bf4e6dfe6ef84412d3413e720b23347dbd
 */
