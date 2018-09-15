@@ -2,6 +2,17 @@
 
 ?>
 
+<style type="text/css">
+    
+body{
+    background-image: url(indexParts/img/fondo.jpg);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    background-attachment: fixed;
+}
+</style>
+
 <!doctype html>
 <html lang="en">
 
@@ -18,13 +29,35 @@
 </head>
 
 <body>
-    <div class="container">
-        <div class="row">
-            <!-- NAVBAR -->
-            
-            <!-- NAVBAR -->
-        </div>
-    </div>
+
+
+
+
+<!--NAVBARS-->
+<?php  
+        include("indexParts/navbarLogOf.php");
+?>
+<?php
+        //include("indexParts/navbarLogOn.php");
+?>
+ 
+
+
+
+
+
+<!--FOOTER-->
+    <?php include ("indexParts/footer.php"); ?>
+
+
+
+
+
+
+
+
+
+
 
 
     <!-- Optional JavaScript -->
