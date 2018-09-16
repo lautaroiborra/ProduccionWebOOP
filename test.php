@@ -1,7 +1,68 @@
 <?php
-/*
+
 require_once('config.php');
 
+function CreateUser(){
+    /*Hardcodeo un array de un logueo(user) que voy a recibir por parametro.
+        Se testea su introduccion dentro del array data(json.decode) con exito.
+        Falta agregar los \n para que se vea con orden.
+        Inconveniente al intentar escribir el users.json, ya que lo escribe por fuera
+        de los logueos registrados.
+    */
+    $file_name = "users.json";
+    $file = fopen($file_name, 'r');
+    $data = json_decode(fread($file, filesize($file_name)));
+
+//USUARIO HARDCODEADO
+    $usu=array(
+        "UsuarioNuevo"=>
+            array(
+                "NOMBRE"=>"NICOLAS",
+                "MAIL"=>"NUEVOMAIL")
+    );
+       //var_dump($usu);
+
+//INGRESO DE USUARIO A DATA
+        $usu = 'NuevoUsuario';
+        $datosUsuario = array();
+        $datosUsuario['name'] = $usu ;
+        $data->NuevoRegistro = $datosUsuario;
+        //var_dump($data);
+
+//ENCODE DE DATA CON USUARIO DENTRO
+        $algo = json_encode($data);
+        var_dump($algo);
+        //fwrite($file, $salvar);
+
+    fclose($file);
+}
+$data = CreateUser();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
 function FetchDataAssoc(){
     //testeo
     $nameUser = "testeo1";
@@ -47,7 +108,7 @@ var_dump($user);
 <<<<<<< HEAD
 =======
 */
-
+/*
 $host = '127.0.0.1';
 $db   = 'produccionweb';
 $user = 'root';
