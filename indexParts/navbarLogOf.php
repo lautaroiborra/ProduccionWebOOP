@@ -33,12 +33,43 @@ nav a{
       <input class="form-control mr-sm-2 " type="search" placeholder="Usuario">
        <input class="form-control mr-sm-2" type="search" placeholder="Contraseña">
       <a class="btn btn-primary my-2 my-sm-0 mr-2 text-white " type="submit">LogIn</a>
-      <a class="btn btn-success my-2 my-sm-0 text-white" type="submit">SingUp</a>
+      <a class="btn btn-success my-2 my-sm-0 text-white" type="submit" data-toggle="modal" data-target="#exampleModalCenter">SingUp</a>
     </form>
   </div>
 </nav>
 
-
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Registrarme</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Usuario</label>
+                        <input type="user" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Usuario">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Email</label>
+                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Email">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputPassword1">Password</label>
+                        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-lg btn-block">Enviar</button>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+            </div>
+        </div>
+    </div>
+</div>
 
 
 

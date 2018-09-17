@@ -44,6 +44,14 @@ body{
 
 
 
+<!--BODYLOGS-->
+
+<?php
+//funcion Ajax llamando al Objeto Json "LOGS"
+
+
+?>
+
 
 
 <!--FOOTER-->
