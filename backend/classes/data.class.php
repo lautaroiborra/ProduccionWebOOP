@@ -52,6 +52,42 @@ class JSON
         }
 }
 
+ function fileToArray($file){
+        $fileData = file($file, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES); //Lee entero el archivo y lo guarda en una variable como un array. Tiene un flag para que ignore las líneas vacías, no debería pasar pero bueno, puede pasar :P
+        $logs = [];
+        foreach ($fileData as $data) {
+            list($username, $action, $date) = explode(":", $data); //le asigna a las variables de parámetro de list(), lo que devuelve explode(). explode() separa un string en base a un carácter
+            $logs[] = [
+                'name' => $username,
+                'action' => $action,
+                'date' => $date
+            ];
+        }
+        return $logs; //Devolvemos el array multidimensional de los logs
+    }
+    function pushLog($file, $data){
+        $data .= "\n";
+        file_put_contents($file, $data, FILE_APPEND);
+    }
+    
+    function isEmpty($directory){ //Esta función chequea si un directorio está vacío
+ 
+        return (count(scandir($directory)) <= 2); //El 2 es porque puede haber un ".DSTORE" o un ".."
+    }
+
+   function fetchData($filePath){
+        $file = fopen($filePath, 'r');
+        $data = json_decode(fread($file, filesize($filePath)));
+        fclose($file);
+        return $data;
+    }
+    
+    function fetchDataAssoc($filePath){
+        $file = fopen($filePath, 'r');
+        $data = json_decode(fread($file, filesize($filePath)), true);
+        fclose($file);
+        return $data;
+    }
 
 
 /*
